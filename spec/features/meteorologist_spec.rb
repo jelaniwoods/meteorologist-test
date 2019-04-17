@@ -25,20 +25,6 @@ describe "rails api:stubbed" do
     stub_request(:any, new_forecasts_url).to_return(body: File.new('spec/forecasts_response_body.txt'), status: 200)
     Rake::Task["api:stubbed"].invoke
 
-    # stub_request(:any, maps_url).to_return(body: File.new('spec/maps_response_body.txt'), status: 200)
-
-
-    #====================  Begin setup  ===========================#
-    # captures a URL pattern for the Google geocoding API call
-
-    # captures two potential URL patterns from the controller forceast API calls
-    # directs those URL patterns to static hardcoded responses that we've pre-
-    # saved, instead of waiting for a dynamic web response
-    # stub_request(:any, old_forecasts_url).to_return(body: File.new('spec/forecasts_response_body.txt'), status: 200)
-    # stub_request(:any, new_forecasts_url).to_return(body: File.new('spec/forecasts_response_body.txt'), status: 200)
-    #====================  End setup  =============================#
-
-
   end
 
 
